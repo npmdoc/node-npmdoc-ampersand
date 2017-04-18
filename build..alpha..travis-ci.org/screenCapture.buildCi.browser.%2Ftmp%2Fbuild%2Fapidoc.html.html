@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/ampersandjs/ampersand"
-
-    >ampersand (v3.0.6)</a>
+    <a href="https://github.com/ampersandjs/ampersand">ampersand (v3.0.6)</a>
 </h1>
 <h4>CLI tool for generating single page apps a. la. http://humanjavascript.com</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.ampersand">module ampersand</a><ol>
 
@@ -153,31 +146,31 @@
     var fileName;
 
     // allow names with js or not
-    if (name &#x26;&#x26; name.indexOf(&#x27;.js&#x27;) === -1) {
-        fileName = name + &#x27;.js&#x27;;
+    if (name &amp;&amp; name.indexOf('.js') === -1) {
+        fileName = name + '.js';
     } else {
         fileName = name;
     }
 
-    if (type === &#x27;router&#x27;) {
+    if (type === 'router') {
         folderPath = path.join(config.approot, config.clientfolder);
-        filePath = path.join(folderPath, (fileName || &#x27;router.js&#x27;));
-    } else if (type === &#x27;model&#x27;) {
-        if (!name) quit(&#x27;please specify a name: ampersand gen model &#x27; + chalk.magenta(&#x27;${your model name}&#x27;));
+        filePath = path.join(folderPath, (fileName || 'router.js'));
+    } else if (type === 'model') {
+        if (!name) quit('please specify a name: ampersand gen model ' + chalk.magenta('${your model name}'));
         folderPath = path.join(config.approot, config.clientfolder, config.modelfolder);
         collectionPath = path.join(config.approot, config.clientfolder, config.collectionfolder);
         filePath = path.join(folderPath, fileName);
-        collectionToModelPath = path.join(path.relative(collectionPath, folderPath), name).replace(/\\/g, &#x27;/&#x27;);
-    } else if (type === &#x27;view&#x27;) {
-        if (!name) quit(&#x27;please specify a name: ampersand gen view &#x27; + chalk.magenta(&#x27;${your view name}&#x27;));
+        collectionToModelPath = path.join(path.relative(collectionPath, folderPath), name).replace(/\\/g, '/');
+    } else if (type === 'view') {
+        if (!name) quit('please specify a name: ampersand gen view ' + chalk.magenta('${your view name}'));
         folderPath = path.join(config.approot, config.clientfolder, config.viewfolder);
         filePath = path.join(folderPath, fileName);
-    } else if (type === &#x27;page&#x27;) {
-        if (!name) quit(&#x27;please specify a name: ampersand gen page &#x27; + chalk.magenta(&#x27;${your page name}&#x27;));
+    } else if (type === 'page') {
+        if (!name) quit('please specify a name: ampersand gen page ' + chalk.magenta('${your page name}'));
         folderPath = path.join(config.approot, config.clientfolder, config.pagefolder);
         filePath = path.join(folderPath, fileName);
-    } else if (type === &#x27;form&#x27;) {
-        if (!name) quit(&#x27;please specify a path to the model: ampersand gen form &#x27; + chalk.magenta(&#x27;${path to model}&#x27;));
+    } else if (type === 'form') {
+        if (!name) quit('please specify a path to the model: ampersand gen form ' + chalk.magenta('${path to model}'));
         folderPath = path.join(config.approot, config.clientfolder, config.formsfolder);
         filePath = path.join(folderPath, path.basename(fileName));
     }
@@ -185,41 +178,41 @@
     if (name) {
         config.folderPath = folderPath;
         config.relPath = path.relative(process.cwd(), filePath);
-        if (!config.force &#x26;&#x26; fs.existsSync(filePath)) return quit(&#x27;file already exists at: &#x27; +  chalk.magenta(config.relPath) + &#x27;
-add &#x27; + chalk.magenta(&#x27;-f&#x27;) + &#x27; to force&#x27;);
+        if (!config.force &amp;&amp; fs.existsSync(filePath)) return quit('file already exists at: ' +  chalk.magenta(config.relPath) + '
+add ' + chalk.magenta('-f') + ' to force');
         stdin(function (input) {
             if (input) {
                 config.data = input;
             }
-            if (type === &#x27;model&#x27;) {
+            if (type === 'model') {
                 config.name = name;
                 config.collectionToModelPath = collectionToModelPath;
                 genTypes.model(config, function (err, result) {
                     var modelFilePath = path.join(config.folderPath, result.modelFileName);
                     var collectionFilePath = path.join(collectionPath, result.collectionFileName);
-                    fs.outputFileSync(modelFilePath, clean(result.model, config), &#x27;utf8&#x27;);
-                    console.log(&#x27;\nnew &#x27; + chalk.magenta(&#x27;Model&#x27;) + &#x27; created as &#x27; + chalk.magenta(path.relative(process.cwd(),
+                    fs.outputFileSync(modelFilePath, clean(result.model, config), 'utf8');
+                    console.log('\nnew ' + chalk.magenta('Model') + ' created as ' + chalk.magenta(path.relative(process.cwd(),
 modelFilePath)));
                     if (config.makecollection) {
-                        fs.outputFileSync(collectionFilePath, clean(result.collection, config), &#x27;utf8&#x27;);
-                        console.log(&#x27;new &#x27; + chalk.magenta(&#x27;Collection&#x27;) + &#x27; for &#x27; + chalk.magenta(name) + &#x27; created as &#x27; + chalk
+                        fs.outputFileSync(collectionFilePath, clean(result.collection, config), 'utf8');
+                        console.log('new ' + chalk.magenta('Collection') + ' for ' + chalk.magenta(name) + ' created as ' + chalk
 .magenta(path.relative(process.cwd(), collectionFilePath)));
                     }
-                    console.log(&#x27;&#x27;);
+                    console.log('');
                     quit();
                 });
-            } else if (type === &#x27;form&#x27;) {
+            } else if (type === 'form') {
                 genTypes.form({modelpath: name}, function (err, code) {
-                    fs.outputFileSync(filePath, clean(code, config), &#x27;utf8&#x27;);
-                    quit(&#x27;new &#x27; + chalk.magenta(&#x27;Form&#x27;) + &#x27; for &#x27; + chalk.magenta(path.basename(fileName)) + &#x27; created as &#x27; + chalk
+                    fs.outputFileSync(filePath, clean(code, config), 'utf8');
+                    quit('new ' + chalk.magenta('Form') + ' for ' + chalk.magenta(path.basename(fileName)) + ' created as ' + chalk
 .magenta(path.relative(process.cwd(), filePath)));
                 });
             } else {
                 file = readFile(config[type]);
-                if (!file) return quit(&#x27;no template file found at &#x27; + config[type]);
+                if (!file) return quit('no template file found at ' + config[type]);
                 file = clean(processTemplate(file, config), config);
-                fs.outputFileSync(filePath, file, &#x27;utf8&#x27;);
-                quit(&#x27;ne ...</pre></li>
+                fs.outputFileSync(filePath, file, 'utf8');
+                quit('ne ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -233,10 +226,10 @@ modelFilePath)));
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">quit = function (message, exitCode) {
-    if (typeof exitCode === &#x27;undefined&#x27;) {
+    if (typeof exitCode === 'undefined') {
         exitCode = 1;
     }
-    if (message) console.log(&#x27;\n&#x27; + message + &#x27;\n&#x27;);
+    if (message) console.log('\n' + message + '\n');
     process.exit(exitCode || 0);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -254,7 +247,7 @@ modelFilePath)));
     <li>description and source-code<pre class="apidocCodePre">readfilesync = function (path, encoding) {
     var res;
     try {
-        res = fs.readFileSync(path, encoding || &#x27;utf8&#x27;);
+        res = fs.readFileSync(path, encoding || 'utf8');
     } catch (e) {}
     return res;
 }</pre></li>
@@ -286,31 +279,31 @@ modelFilePath)));
     var fileName;
 
     // allow names with js or not
-    if (name &#x26;&#x26; name.indexOf(&#x27;.js&#x27;) === -1) {
-        fileName = name + &#x27;.js&#x27;;
+    if (name &amp;&amp; name.indexOf('.js') === -1) {
+        fileName = name + '.js';
     } else {
         fileName = name;
     }
 
-    if (type === &#x27;router&#x27;) {
+    if (type === 'router') {
         folderPath = path.join(config.approot, config.clientfolder);
-        filePath = path.join(folderPath, (fileName || &#x27;router.js&#x27;));
-    } else if (type === &#x27;model&#x27;) {
-        if (!name) quit(&#x27;please specify a name: ampersand gen model &#x27; + chalk.magenta(&#x27;${your model name}&#x27;));
+        filePath = path.join(folderPath, (fileName || 'router.js'));
+    } else if (type === 'model') {
+        if (!name) quit('please specify a name: ampersand gen model ' + chalk.magenta('${your model name}'));
         folderPath = path.join(config.approot, config.clientfolder, config.modelfolder);
         collectionPath = path.join(config.approot, config.clientfolder, config.collectionfolder);
         filePath = path.join(folderPath, fileName);
-        collectionToModelPath = path.join(path.relative(collectionPath, folderPath), name).replace(/\\/g, &#x27;/&#x27;);
-    } else if (type === &#x27;view&#x27;) {
-        if (!name) quit(&#x27;please specify a name: ampersand gen view &#x27; + chalk.magenta(&#x27;${your view name}&#x27;));
+        collectionToModelPath = path.join(path.relative(collectionPath, folderPath), name).replace(/\\/g, '/');
+    } else if (type === 'view') {
+        if (!name) quit('please specify a name: ampersand gen view ' + chalk.magenta('${your view name}'));
         folderPath = path.join(config.approot, config.clientfolder, config.viewfolder);
         filePath = path.join(folderPath, fileName);
-    } else if (type === &#x27;page&#x27;) {
-        if (!name) quit(&#x27;please specify a name: ampersand gen page &#x27; + chalk.magenta(&#x27;${your page name}&#x27;));
+    } else if (type === 'page') {
+        if (!name) quit('please specify a name: ampersand gen page ' + chalk.magenta('${your page name}'));
         folderPath = path.join(config.approot, config.clientfolder, config.pagefolder);
         filePath = path.join(folderPath, fileName);
-    } else if (type === &#x27;form&#x27;) {
-        if (!name) quit(&#x27;please specify a path to the model: ampersand gen form &#x27; + chalk.magenta(&#x27;${path to model}&#x27;));
+    } else if (type === 'form') {
+        if (!name) quit('please specify a path to the model: ampersand gen form ' + chalk.magenta('${path to model}'));
         folderPath = path.join(config.approot, config.clientfolder, config.formsfolder);
         filePath = path.join(folderPath, path.basename(fileName));
     }
@@ -318,41 +311,41 @@ modelFilePath)));
     if (name) {
         config.folderPath = folderPath;
         config.relPath = path.relative(process.cwd(), filePath);
-        if (!config.force &#x26;&#x26; fs.existsSync(filePath)) return quit(&#x27;file already exists at: &#x27; +  chalk.magenta(config.relPath) + &#x27;
-add &#x27; + chalk.magenta(&#x27;-f&#x27;) + &#x27; to force&#x27;);
+        if (!config.force &amp;&amp; fs.existsSync(filePath)) return quit('file already exists at: ' +  chalk.magenta(config.relPath) + '
+add ' + chalk.magenta('-f') + ' to force');
         stdin(function (input) {
             if (input) {
                 config.data = input;
             }
-            if (type === &#x27;model&#x27;) {
+            if (type === 'model') {
                 config.name = name;
                 config.collectionToModelPath = collectionToModelPath;
                 genTypes.model(config, function (err, result) {
                     var modelFilePath = path.join(config.folderPath, result.modelFileName);
                     var collectionFilePath = path.join(collectionPath, result.collectionFileName);
-                    fs.outputFileSync(modelFilePath, clean(result.model, config), &#x27;utf8&#x27;);
-                    console.log(&#x27;\nnew &#x27; + chalk.magenta(&#x27;Model&#x27;) + &#x27; created as &#x27; + chalk.magenta(path.relative(process.cwd(),
+                    fs.outputFileSync(modelFilePath, clean(result.model, config), 'utf8');
+                    console.log('\nnew ' + chalk.magenta('Model') + ' created as ' + chalk.magenta(path.relative(process.cwd(),
 modelFilePath)));
                     if (config.makecollection) {
-                        fs.outputFileSync(collectionFilePath, clean(result.collection, config), &#x27;utf8&#x27;);
-                        console.log(&#x27;new &#x27; + chalk.magenta(&#x27;Collection&#x27;) + &#x27; for &#x27; + chalk.magenta(name) + &#x27; created as &#x27; + chalk
+                        fs.outputFileSync(collectionFilePath, clean(result.collection, config), 'utf8');
+                        console.log('new ' + chalk.magenta('Collection') + ' for ' + chalk.magenta(name) + ' created as ' + chalk
 .magenta(path.relative(process.cwd(), collectionFilePath)));
                     }
-                    console.log(&#x27;&#x27;);
+                    console.log('');
                     quit();
                 });
-            } else if (type === &#x27;form&#x27;) {
+            } else if (type === 'form') {
                 genTypes.form({modelpath: name}, function (err, code) {
-                    fs.outputFileSync(filePath, clean(code, config), &#x27;utf8&#x27;);
-                    quit(&#x27;new &#x27; + chalk.magenta(&#x27;Form&#x27;) + &#x27; for &#x27; + chalk.magenta(path.basename(fileName)) + &#x27; created as &#x27; + chalk
+                    fs.outputFileSync(filePath, clean(code, config), 'utf8');
+                    quit('new ' + chalk.magenta('Form') + ' for ' + chalk.magenta(path.basename(fileName)) + ' created as ' + chalk
 .magenta(path.relative(process.cwd(), filePath)));
                 });
             } else {
                 file = readFile(config[type]);
-                if (!file) return quit(&#x27;no template file found at &#x27; + config[type]);
+                if (!file) return quit('no template file found at ' + config[type]);
                 file = clean(processTemplate(file, config), config);
-                fs.outputFileSync(filePath, file, &#x27;utf8&#x27;);
-                quit(&#x27;ne ...</pre></li>
+                fs.outputFileSync(filePath, file, 'utf8');
+                quit('ne ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -371,10 +364,10 @@ modelFilePath)));
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">quit = function (message, exitCode) {
-    if (typeof exitCode === &#x27;undefined&#x27;) {
+    if (typeof exitCode === 'undefined') {
         exitCode = 1;
     }
-    if (message) console.log(&#x27;\n&#x27; + message + &#x27;\n&#x27;);
+    if (message) console.log('\n' + message + '\n');
     process.exit(exitCode || 0);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -397,7 +390,7 @@ modelFilePath)));
     <li>description and source-code<pre class="apidocCodePre">readfilesync = function (path, encoding) {
     var res;
     try {
-        res = fs.readFileSync(path, encoding || &#x27;utf8&#x27;);
+        res = fs.readFileSync(path, encoding || 'utf8');
     } catch (e) {}
     return res;
 }</pre></li>
@@ -413,3 +406,4 @@ modelFilePath)));
     ]
 </div>
 </div>
+</body></html>
