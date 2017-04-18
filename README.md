@@ -1,9 +1,14 @@
-# api documentation for  [ampersand (v3.0.6)](https://github.com/ampersandjs/ampersand)  [![npm package](https://img.shields.io/npm/v/npmdoc-ampersand.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ampersand) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ampersand.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ampersand)
+# npmdoc-ampersand
+
+#### api documentation for  [ampersand (v3.0.6)](https://github.com/ampersandjs/ampersand)  [![npm package](https://img.shields.io/npm/v/npmdoc-ampersand.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ampersand) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ampersand.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ampersand)
+
 #### CLI tool for generating single page apps a. la. http://humanjavascript.com
 
-[![NPM](https://nodei.co/npm/ampersand.png?downloads=true)](https://www.npmjs.com/package/ampersand)
+[![NPM](https://nodei.co/npm/ampersand.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/ampersand)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-ampersand/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-ampersand_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-ampersand/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-ampersand/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-ampersand/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-ampersand/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-ampersand/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-ampersand/build/screenCapture.npmPackageListing.svg)
 
@@ -17,8 +22,7 @@
 
 {
     "author": {
-        "name": "Henrik Joreteg",
-        "email": "henrik@andyet.net"
+        "name": "Henrik Joreteg"
     },
     "bin": {
         "ampersand": "./bin/ampersand"
@@ -60,26 +64,21 @@
     "main": "./bin/ampersand",
     "maintainers": [
         {
-            "name": "henrikjoreteg",
-            "email": "henrik@andyet.net"
+            "name": "henrikjoreteg"
         },
         {
-            "name": "latentflip",
-            "email": "phil@latentflip.com"
+            "name": "latentflip"
         },
         {
-            "name": "gar",
-            "email": "gar+npm@danger.computer"
+            "name": "gar"
         },
         {
-            "name": "fyockm",
-            "email": "fyockm@gmail.com"
+            "name": "fyockm"
         }
     ],
     "name": "ampersand",
     "optionalDependencies": {},
     "preferGlobal": true,
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/ampersandjs/ampersand.git"
@@ -91,16 +90,6 @@
     "version": "3.0.6"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module ampersand](#apidoc.module.ampersand)
-
-
-
-# <a name="apidoc.module.ampersand"></a>[module ampersand](#apidoc.module.ampersand)
 
 
 
