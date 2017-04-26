@@ -1,6 +1,6 @@
 # npmdoc-ampersand
 
-#### api documentation for  [ampersand (v3.0.6)](https://github.com/ampersandjs/ampersand)  [![npm package](https://img.shields.io/npm/v/npmdoc-ampersand.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ampersand) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ampersand.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ampersand)
+#### basic api documentation for  [ampersand (v3.0.6)](https://github.com/ampersandjs/ampersand)  [![npm package](https://img.shields.io/npm/v/npmdoc-ampersand.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ampersand) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ampersand.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ampersand)
 
 #### CLI tool for generating single page apps a. la. http://humanjavascript.com
 
